@@ -36,6 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -51,6 +52,12 @@ ROOT_URLCONF = 'student_app.urls'
 
 WSGI_APPLICATION = 'student_app.wsgi.application'
 
+REST_FRAMEWORK = {
+    'DEFAULT_MODEL_SERIALIZER':
+        'rest_'
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
+    'PAGINATE_BY': 10
+}
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
@@ -59,6 +66,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'USER':'',
+        'PASSWORD':'',
+        'HOST':'',
+        'PORT':''
     }
 }
 
